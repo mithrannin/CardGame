@@ -1857,6 +1857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8801607780b743641b0c62ae7444b762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  <Side>k__BackingField: 0
   hand: {fileID: 825680773}
   field: {fileID: 2049579096}
   graveyard: {fileID: 1153972051}
@@ -6880,6 +6881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8801607780b743641b0c62ae7444b762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  <Side>k__BackingField: 1
   hand: {fileID: 420270295}
   field: {fileID: 1266504169}
   graveyard: {fileID: 1574760002}

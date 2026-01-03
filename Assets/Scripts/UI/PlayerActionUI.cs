@@ -20,11 +20,13 @@ public class PlayerActionUI : MonoBehaviour
 
     private void OnResurrectClicked()
     {
-        actionController.TryReturnGraveyardToHand(turnSystem.ActivePlayer);
+        if (turnSystem.ActivePlayer.Controller.Side == PlayerSide.Human)        
+            actionController.TryReturnGraveyardToHand(turnSystem.ActivePlayer);
     }
 
     private void OnGainManaClicked()
     {
-        actionController.TryGainMana(turnSystem.ActivePlayer);
+        if (turnSystem.ActivePlayer.Controller.Side == PlayerSide.Human)
+            actionController.TryGainMana(turnSystem.ActivePlayer);
     }
 }

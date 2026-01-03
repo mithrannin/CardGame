@@ -1,12 +1,10 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
-public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IOwnedBy
 {
     [Header("Data")]
     [SerializeField] protected CardSO cardData;
@@ -27,6 +25,7 @@ public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public int CurrentManaCost { get; private set; }
     private bool isDragging;
     public PlayerController Owner { get; private set; }
+    public PlayerSide OwnerSide => Owner.Side;
 
     private Transform cachedParent;
     private Vector3 cachedWorldPosition;
@@ -72,7 +71,7 @@ public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (!GameplayController.Instance.CanDragCard(this))
+        if (!GameplayController.Instance.CanHumanInteract(this))
             return;
 
         CacheDragState();
@@ -82,7 +81,7 @@ public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!GameplayController.Instance.CanDragCard(this))
+        if (!GameplayController.Instance.CanHumanInteract(this))
             return;
 
         isDragging = true;
@@ -116,10 +115,23 @@ public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (Location != CardLocation.Hand || isDragging)
+        if (isDragging)
             return;
 
-        cardVisual.SetHovered(true);
+        if (Location == CardLocation.Hand)
+        {
+            if (OwnerSide != PlayerSide.Human)
+                return;
+
+            cardVisual.SetHovered(true);
+            return;
+        }
+
+        if (Location == CardLocation.Field)
+        {
+            if (OwnerSide == PlayerSide.AI)
+                cardVisual.SetHovered(true);
+        }        
     }
 
     public void OnPointerExit(PointerEventData eventData)

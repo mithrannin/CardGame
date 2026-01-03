@@ -15,6 +15,8 @@ public class GameplayController : MonoBehaviour
 
     private PlayerContext ActivePlayer => turnSystem.ActivePlayer;
     private PlayerContext InactivePlayer => turnSystem.InactivePlayer;
+    public PlayerSide CurrentTurnSide => turnSystem.ActivePlayer.Controller.Side;
+    public bool IsResolving { get; private set; }
 
     [Header("Systems")]
     [SerializeField] private TurnSystemManager turnSystem;
@@ -66,12 +68,21 @@ public class GameplayController : MonoBehaviour
 
     #region Card Dragging (called by Card)
 
-    public bool CanDragCard(Card card)
+    public bool CanHumanInteract(IOwnedBy owned)
     {
-        return
-            turnSystem.CanTakeAction() &&
-            card.Location == CardLocation.Hand &&
-            card.Owner == turnSystem.ActivePlayer.Controller;
+        if (IsResolving)
+            return false;
+
+        if (CurrentTurnSide != PlayerSide.Human)
+            return false;
+
+        if (owned.OwnerSide != PlayerSide.Human) 
+            return false;
+
+        if (!turnSystem.CanTakeAction())
+            return false;
+
+        return true;
     }
 
     public void OnDragStarted(Card card)
@@ -92,7 +103,7 @@ public class GameplayController : MonoBehaviour
         ClearHighlights(owner);
         DeselectCard();
 
-        if (!turnSystem.CanTakeAction())
+        if (!CanHumanInteract(card))
         {
             owner.Hand.RestoreCardPosition(card);
             return;
