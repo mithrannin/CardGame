@@ -16,7 +16,7 @@ public class GameplayController : MonoBehaviour
     private PlayerContext ActivePlayer => turnSystem.ActivePlayer;
     private PlayerContext InactivePlayer => turnSystem.InactivePlayer;
     public PlayerSide CurrentTurnSide => turnSystem.ActivePlayer.Controller.Side;
-    public bool IsResolving { get; private set; }
+    public bool IsResolving { get; set; }
 
     [Header("Systems")]
     [SerializeField] private TurnSystemManager turnSystem;

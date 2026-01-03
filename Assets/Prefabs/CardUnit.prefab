@@ -79,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7485260824747251537, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
       insertIndex: -1
       addedObject: {fileID: 784734339842841731}
+    - targetCorrespondingSourceObject: {fileID: 1834626610620939802, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4576134040817033592}
   m_SourcePrefab: {fileID: 100100000, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
 --- !u!1 &290582661673515833 stripped
 GameObject:
@@ -104,12 +107,13 @@ MonoBehaviour:
   abilityText: {fileID: 9060453107245838851}
   manaIcon: {fileID: 5367377930044650914}
   cardImage: {fileID: 423391776161495927}
-  moveDuration: 0.25
   cardVisual: {fileID: 3413678721680307831}
-  currentAttack: 0
-  currentHealth: 0
+  moveDuration: 0.25
+  Attack: 0
+  Health: 0
   attackText: {fileID: 516437133944075943}
   healthText: {fileID: 6279749300815101245}
+  animator: {fileID: 4576134040817033592}
 --- !u!114 &423391776161495927 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7352292385091983135, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
@@ -137,7 +141,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5528015566193465887, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
   m_PrefabInstance: {fileID: 7199186985407933544}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8835289808668512882}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6669a3619c6d1734b85f5d661f855cca, type: 3}
@@ -187,6 +191,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &8835289808668512882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1834626610620939802, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4576134040817033592
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835289808668512882}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc0014951703d3349af504deebd27103, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &9060453107245838851 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2185816417304190571, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}

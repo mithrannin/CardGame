@@ -14,6 +14,7 @@ public class CardUnit : Card
     [Header("Unit-specific")]
     [SerializeField] private TMP_Text attackText;
     [SerializeField] private TMP_Text healthText;
+    public Animator animator;
 
     protected override void OnInitializeCard(CardSO data)
     {
@@ -40,6 +41,7 @@ public class CardUnit : Card
     public void TakeDamage(int damage)
     {
         Health -= damage;
+        animator.SetTrigger("Hurt");
         if (Health <= 0)
         {
             Die();
