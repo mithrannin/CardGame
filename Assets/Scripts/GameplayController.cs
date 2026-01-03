@@ -7,21 +7,22 @@ public class GameplayController : MonoBehaviour
     public static GameplayController Instance { get; private set; }
 
     [Header("Players")]
-    [SerializeField] private PlayerContextView playerView;
-    [SerializeField] private PlayerContextView opponentView;
+    [SerializeField] private PlayerView playerView;
+    [SerializeField] private PlayerView opponentView;
 
-    private PlayerContext player;
-    private PlayerContext opponent;
+    public Player Player => playerView.Player;
+    public Player Opponent => opponentView.Player;
 
-    private PlayerContext ActivePlayer => turnSystem.ActivePlayer;
-    private PlayerContext InactivePlayer => turnSystem.InactivePlayer;
-    public PlayerSide CurrentTurnSide => turnSystem.ActivePlayer.Controller.Side;
+    private Player ActivePlayer => turnSystem.ActivePlayer;
+    private Player InactivePlayer => turnSystem.InactivePlayer;
+    public PlayerSide CurrentTurnSide => turnSystem.ActivePlayer.Side;
     public bool IsResolving { get; set; }
 
     [Header("Systems")]
     [SerializeField] private TurnSystemManager turnSystem;
     [SerializeField] private CardPlayResolver cardPlayResolver;
-    [SerializeField] private PlayerActionController actionController;
+    
+    public AIController AiController;
 
     [Header("UI")]
     [SerializeField] private PlayerStatusUI playerUI;
@@ -39,31 +40,18 @@ public class GameplayController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
-        player = playerView.Context;
-        opponent = opponentView.Context;
     }
 
     private void Start()
     {
         StartGame();
 
-        playerUI.Bind(player);
-        opponentUI.Bind(opponent);
+        playerUI.Bind(Player);
+        opponentUI.Bind(Opponent);
         playerActionUI.Bind(turnSystem);
         turnUI.Bind(turnSystem);
-    }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (turnSystem.CanTakeAction())
-            {
-                turnSystem.ConsumeAction();
-                Debug.Log($"Active player: {turnSystem.ActivePlayer}, turn phase: {turnSystem.Phase}");
-            }
-        }
+        AiController.Initialize(Opponent, Player, turnSystem);
     }
 
     #region Card Dragging (called by Card)
@@ -79,7 +67,7 @@ public class GameplayController : MonoBehaviour
         if (owned.OwnerSide != PlayerSide.Human) 
             return false;
 
-        if (!turnSystem.CanTakeAction())
+        if (!turnSystem.CanTakeAction(PlayerSide.Human))
             return false;
 
         return true;
@@ -89,7 +77,7 @@ public class GameplayController : MonoBehaviour
     {
         SelectCard(card);
 
-        PlayerContext active = ActivePlayer;
+        Player active = ActivePlayer;
         if (active.Mana.CanPayCost(card))
             HighlightValidSlots(active);
         else
@@ -98,7 +86,7 @@ public class GameplayController : MonoBehaviour
 
     public void ResolveDrag(Card card)
     {
-        PlayerContext owner = GetPlayerContext(card.Owner);
+        Player owner = (card.Owner.Player);
 
         ClearHighlights(owner);
         DeselectCard();
@@ -141,13 +129,13 @@ public class GameplayController : MonoBehaviour
         selectedCard = null;
     }
 
-    private void HighlightValidSlots(PlayerContext context)
+    private void HighlightValidSlots(Player context)
     {
         foreach (var slot in context.Field.Slots)
             slot.SetHighlight(slot.IsEmpty);
     }
 
-    private void ClearHighlights(PlayerContext context)
+    private void ClearHighlights(Player context)
     {
         foreach (var slot in context.Field.Slots)
             slot.SetHighlight(false);
@@ -158,7 +146,7 @@ public class GameplayController : MonoBehaviour
         if (ActivePlayer == null || ActivePlayer.Hand == null)
             return;
 
-        PlayerContext active = ActivePlayer;
+        Player active = ActivePlayer;
 
         foreach (Card card in active.Hand.Cards)
             card.SetPlayable(active.Mana.CanPayCost(card));
@@ -170,27 +158,29 @@ public class GameplayController : MonoBehaviour
 
     private void StartGame()
     {
-        InitializePlayer(player);
-        InitializePlayer(opponent);
+        InitializePlayer(playerView);
+        InitializePlayer(opponentView);
 
         if (UnityEngine.Random.value < 0.5f)
-            turnSystem.StartGame(player, opponent);
+            turnSystem.StartGame(Player, Opponent);
         else
-            turnSystem.StartGame(opponent, player);
+            turnSystem.StartGame(Opponent, Player);
     }
 
-    private void InitializePlayer(PlayerContext context)
+    private void InitializePlayer(PlayerView view)
     {
-        context.Deck.Validate();
+        Player player = view.Player;
 
-        var manaColors = context.Deck.GetUsedManaColors();
-        context.Mana.Initialize(manaColors, 2);
+        player.Deck.Validate();
 
-        context.Mana.OnManaChanged += RefreshHandPlayableState;
-        context.Hand.OnHandChanged += RefreshHandPlayableState;
-        context.Controller.State.OnLifeChanged += CheckWinCondition;
+        var manaColors = player.Deck.GetUsedManaColors();
+        player.Mana.Initialize(manaColors, 2);
 
-        DrawFullDeck(context);
+        player.Mana.OnManaChanged += RefreshHandPlayableState;
+        player.Hand.OnHandChanged += RefreshHandPlayableState;
+        player.OnLifeChanged += CheckWinCondition;
+
+        DrawFullDeck(view);
 
         StartCoroutine(DelayedHandRefresh());
     }
@@ -201,12 +191,14 @@ public class GameplayController : MonoBehaviour
         RefreshHandPlayableState();
     }
 
-    private void DrawFullDeck(PlayerContext player)
+    private void DrawFullDeck(PlayerView view)
     {
+        Player player = view.Player;
+
         foreach (var cardData in player.Deck.GetAllCards())
         {
             Card card = InstantiateCard(cardData);
-            card.SetOwner(player.Controller);
+            card.SetOwner(view);
             player.Hand.AddCard(card);
         }
     }
@@ -234,24 +226,23 @@ public class GameplayController : MonoBehaviour
 
     public void CheckWinCondition()
     {
-        if (player.Controller.State.Life <= 0)
-            EndGame(opponent.Controller);
+        if (Player.Life <= 0)
+            EndGame(Opponent);
 
-        if (opponent.Controller.State.Life <= 0)
-            EndGame(player.Controller);
+        if (Opponent.Life <= 0)
+            EndGame(Player);
     }
 
-    private void EndGame(PlayerController winner)
+    private void EndGame(Player winner)
     {
-        PlayerContext winnerContext = GetPlayerContext(winner);
-        Debug.Log($"{winnerContext.Name} wins!");
+        Debug.Log($"{winner.Name} wins!");
     }
 
     #endregion
 
     #region Handle units dying - probably move elsewhere later
 
-    public void MoveCardToGraveyard(Card card, PlayerContext owner)
+    public void MoveCardToGraveyard(Card card, Player owner)
     {
         if (card is CardUnit unit && unit.CurrentSlot != null)
         {
@@ -286,19 +277,8 @@ public class GameplayController : MonoBehaviour
     {
         UnregisterUnit(unit);
 
-        PlayerContext owner = GetPlayerContext(unit.Owner);
+        Player owner = unit.Owner.Player;
         MoveCardToGraveyard(unit, owner);
-    }
-
-    public PlayerContext GetPlayerContext(PlayerController controller)
-    {
-        if (controller == player.Controller)
-            return player;
-
-        if (controller == opponent.Controller)
-            return opponent;
-
-        throw new Exception("Unknown player controller");
     }
 
     #endregion

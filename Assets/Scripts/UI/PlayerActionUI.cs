@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class PlayerActionUI : MonoBehaviour
 {
-    [SerializeField] private PlayerActionController actionController;
     [SerializeField] private TurnSystemManager turnSystem;
 
     [Header("Buttons")]
@@ -20,13 +19,13 @@ public class PlayerActionUI : MonoBehaviour
 
     private void OnResurrectClicked()
     {
-        if (turnSystem.ActivePlayer.Controller.Side == PlayerSide.Human)        
-            actionController.TryReturnGraveyardToHand(turnSystem.ActivePlayer);
+        if (turnSystem.ActivePlayer.Side == PlayerSide.Human)        
+            PlayerActions.TryReturnGraveyardToHand(turnSystem.ActivePlayer, turnSystem);
     }
 
     private void OnGainManaClicked()
     {
-        if (turnSystem.ActivePlayer.Controller.Side == PlayerSide.Human)
-            actionController.TryGainMana(turnSystem.ActivePlayer);
+        if (turnSystem.ActivePlayer.Side == PlayerSide.Human)
+            PlayerActions.TryGainMana(turnSystem.ActivePlayer, turnSystem);
     }
 }

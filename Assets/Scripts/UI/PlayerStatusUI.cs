@@ -15,14 +15,14 @@ public class PlayerStatusUI : MonoBehaviour
 
     [SerializeField] private ManaEntry[] manaEntries;
 
-    private PlayerContext context;
+    private Player context;
 
-    public void Bind(PlayerContext context)
+    public void Bind(Player context)
     {
         this.context = context;
 
         context.Mana.OnManaChanged += RefreshMana;
-        context.Controller.State.OnLifeChanged += RefreshLife;
+        context.OnLifeChanged += RefreshLife;
         context.Graveyard.OnChanged += RefreshGraveyard;
 
         RefreshAll();
@@ -49,7 +49,7 @@ public class PlayerStatusUI : MonoBehaviour
 
     private void RefreshLife()
     {
-        lifeText.text = "LIFE: " + context.Controller.State.Life.ToString();
+        lifeText.text = "LIFE: " + context.Life.ToString();
     }
 
     private void RefreshGraveyard()

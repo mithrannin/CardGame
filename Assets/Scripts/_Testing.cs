@@ -4,7 +4,7 @@ public class _Testing : MonoBehaviour
 {
 
     [Header("Player Setup")]
-    [SerializeField] private PlayerContextView playerView;
+    [SerializeField] private PlayerView playerView;
 
     [Header("Zones")]
     [SerializeField] private HandZone handZone;
@@ -14,26 +14,21 @@ public class _Testing : MonoBehaviour
     [SerializeField] private CardUnit cardPrefab;
     [SerializeField] private CardUnitSO[] testCards;
 
-    private PlayerContext player;
+    private Player player;
 
     private void Awake()
     {
-        Debug.Log($"Testing Awake, context = {playerView.Context}");
+        Debug.Log($"Testing Awake, context = {playerView}");
     }
 
     private void Start()
     {
-        Debug.Log($"Testing Start, context = {playerView.Context}");
-        player = playerView.Context;
+        Debug.Log($"Testing Start, context = {playerView}");
+        player = GameplayController.Instance.Player;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            SpawnCardToHand();
-        }
-
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -44,17 +39,5 @@ public class _Testing : MonoBehaviour
             }
         }
     }
-
-    void SpawnCardToHand()
-    {
-        CardUnit card = Instantiate(cardPrefab);
-
-        card.Initialize(testCards[Random.Range(0, testCards.Length)]);
-        card.SetOwner(player.Controller);
-        card.SetPlayable(true); // bypass turn/action checks for testing
-        player.Hand.AddCard(card);
-        Debug.Log($"Spawned card '{card.name}' for {player.Controller.name}");
-    }
-
 
 }

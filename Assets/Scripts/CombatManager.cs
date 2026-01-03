@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
-    public void ResolveCombat(PlayerContext attacker, PlayerContext defender)
+    public void ResolveCombat(Player attacker, Player defender)
     {
         StartCoroutine(ResolveCombatCoroutine(attacker, defender));
     }
 
-    private void ResolveAttack(CardUnit attacker, PlayerContext defender)
+    private void ResolveAttack(CardUnit attacker, Player defender)
     {
         CardSlot opposingSlot = defender.Field.GetOpposingSlot(attacker.CurrentSlot);
         attacker.animator.SetTrigger("Attack");
@@ -23,7 +23,7 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    private IEnumerator ResolveCombatCoroutine(PlayerContext attacker, PlayerContext defender)
+    private IEnumerator ResolveCombatCoroutine(Player attacker, Player defender)
     {
         GameplayController.Instance.IsResolving = true;
 
@@ -45,8 +45,8 @@ public class CombatManager : MonoBehaviour
         defender.TakeDamage(attacker.Attack);
     }
 
-    private void ResolveDirectAttack(CardUnit attacker, PlayerContext defender)
+    private void ResolveDirectAttack(CardUnit attacker, Player defender)
     {
-        defender.Controller.State.TakeDamage(attacker.Attack);
+        defender.TakeDamage(attacker.Attack);
     }
 }

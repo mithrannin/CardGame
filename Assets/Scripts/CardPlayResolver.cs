@@ -2,13 +2,8 @@ using UnityEngine;
 
 public class CardPlayResolver : MonoBehaviour
 {
-    public bool TryResolveDrop(Card card, PlayerContext player, PlayerContext opponent)
+    public bool TryResolveDrop(Card card, Player player, Player opponent)
     {
-        if (!player.Mana.CanPayCost(card))
-        {
-            return false;
-        }
-
         int layerMask = ~LayerMask.GetMask("Card");
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -17,20 +12,24 @@ public class CardPlayResolver : MonoBehaviour
             return false;
         }
 
-        bool resolved = false;
+        if (TryResolveGraveyardDrop(card, hit, player))
+            return true;
+
+        if (!player.Mana.CanPayCost(card))
+        {
+            return false;
+        }
+
         if (card is CardSpell spell)
-            resolved = TryResolveSpell(spell, hit, player, opponent);
+            return TryResolveSpell(spell, hit, player, opponent);
 
         else if (card is CardUnit unit)
-            resolved = TryResolveUnit(unit, hit, player);
+            return TryResolveUnit(unit, hit, player);
 
-        if (!resolved)
-            resolved = TryResolveGraveyardDrop(card, hit, player);
-
-        return resolved;
+        return false;
     }
 
-    private bool TryResolveSpell(CardSpell spell, RaycastHit hit, PlayerContext player, PlayerContext opponent)
+    private bool TryResolveSpell(CardSpell spell, RaycastHit hit, Player player, Player opponent)
     {
         if (!spell.CanResolveOn(hit, player, opponent))
             return false;
@@ -43,7 +42,7 @@ public class CardPlayResolver : MonoBehaviour
         return true;
     }
 
-    private bool TryResolveUnit(CardUnit unit, RaycastHit hit, PlayerContext player)
+    private bool TryResolveUnit(CardUnit unit, RaycastHit hit, Player player)
     {
         CardSlot slot = hit.collider.GetComponent<CardSlot>();
         if (slot == null || !slot.IsEmpty)
@@ -59,7 +58,7 @@ public class CardPlayResolver : MonoBehaviour
         return true;
     }
 
-    private bool TryResolveGraveyardDrop(Card card, RaycastHit hit, PlayerContext player)
+    private bool TryResolveGraveyardDrop(Card card, RaycastHit hit, Player player)
     {
         GraveyardZone graveyard = hit.collider.GetComponent<GraveyardZone>();
         if (graveyard == null)

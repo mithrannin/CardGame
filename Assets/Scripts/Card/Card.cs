@@ -24,7 +24,7 @@ public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public CardLocation Location { get; private set; }
     public int CurrentManaCost { get; private set; }
     private bool isDragging;
-    public PlayerController Owner { get; private set; }
+    public PlayerView Owner { get; private set; }
     public PlayerSide OwnerSide => Owner.Side;
 
     private Transform cachedParent;
@@ -159,7 +159,7 @@ public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             OnEnteredGraveyard();
         }
     }
-    public void SetOwner(PlayerController owner)
+    public void SetOwner(PlayerView owner)
     {
         Owner = owner;
     }

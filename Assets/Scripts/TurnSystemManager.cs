@@ -9,20 +9,19 @@ public enum TurnPhase
 
 public class TurnSystemManager : MonoBehaviour
 {
-    public PlayerContext ActivePlayer { get; private set; }
-    public PlayerContext InactivePlayer { get; private set; }
-
+    public Player ActivePlayer { get; private set; }
+    public Player InactivePlayer { get; private set; }
     public TurnPhase Phase { get; private set; }
     public int ActionsRemaining { get; private set; }
 
     [SerializeField] private CombatManager combatManager;
 
-    private int baseActions = 3;
+    private int baseActions = 1;
     private int turnNumber = 1;
     public int TurnNumber => turnNumber;
 
 
-    public void StartGame(PlayerContext player, PlayerContext opponent)
+    public void StartGame(Player player, Player opponent)
     {
         ActivePlayer = player;
         InactivePlayer = opponent;
@@ -32,14 +31,24 @@ public class TurnSystemManager : MonoBehaviour
     private void BeginTurn()
     {
         ActionsRemaining = baseActions;
-        Phase = TurnPhase.Action;
+        if (turnNumber >= 6)
+            ActionsRemaining++;
 
-        ActivePlayer.Controller.OnTurnStart();
+        if (turnNumber >= 12)
+            ActionsRemaining++;
+        
+        Phase = TurnPhase.Action;
+        ActivePlayer.OnTurnStart();
+
+        if (ActivePlayer.Side == PlayerSide.AI)
+        {
+            StartCoroutine(GameplayController.Instance.AiController.TakeTurn());  
+        }
     }
 
-    public bool CanTakeAction()
+    public bool CanTakeAction(PlayerSide side)
     {
-        return Phase == TurnPhase.Action && ActionsRemaining > 0;
+        return Phase == TurnPhase.Action && ActionsRemaining > 0 && ActivePlayer.Side == side;
     }
 
     public void ConsumeAction()
@@ -60,7 +69,7 @@ public class TurnSystemManager : MonoBehaviour
     private void EndTurn()
     {
         Phase = TurnPhase.End;
-        ActivePlayer.Controller.OnTurnEnd();
+        ActivePlayer.OnTurnEnd();
 
         (ActivePlayer, InactivePlayer) = (InactivePlayer, ActivePlayer);
         turnNumber++;

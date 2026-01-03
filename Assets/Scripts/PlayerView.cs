@@ -1,11 +1,12 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerContextView : MonoBehaviour
+public class PlayerView : MonoBehaviour
 {
-    public PlayerContext Context { get; private set; }
+    public Player Player { get; private set; }
 
-    [SerializeField] private PlayerController controller;
+    [field: SerializeField]
+    public PlayerSide Side { get; private set; }
+
     [SerializeField] private HandZone hand;
     [SerializeField] private FieldZone field;
     [SerializeField] private GraveyardZone graveyard;
@@ -15,9 +16,9 @@ public class PlayerContextView : MonoBehaviour
 
     private void Awake()
     {
-        Context = new PlayerContext(
+        Player = new Player(
             playerName,
-            controller,
+            Side,
             hand,
             field,
             graveyard,

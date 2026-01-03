@@ -14,17 +14,17 @@ public abstract class CardSpell : Card
         }
     }
 
-    public bool CanResolveOn(RaycastHit hit, PlayerContext owner, PlayerContext opponent)
+    public bool CanResolveOn(RaycastHit hit, Player owner, Player opponent)
     {
         return ValidateTarget(hit, owner, opponent);
     }
 
-    public void ResolveSpell(PlayerContext owner, PlayerContext opponent, RaycastHit hit)
+    public void ResolveSpell(Player owner, Player opponent, RaycastHit hit)
     {
         StartCoroutine(ResolveSpellRoutine(owner, opponent, hit));
     }
 
-    private IEnumerator ResolveSpellRoutine(PlayerContext owner, PlayerContext opponent, RaycastHit hit)
+    private IEnumerator ResolveSpellRoutine(Player owner, Player opponent, RaycastHit hit)
     {
         MoveToPoint(Vector3.zero, Quaternion.identity);
 
@@ -37,7 +37,7 @@ public abstract class CardSpell : Card
         GameplayController.Instance.MoveCardToGraveyard(this, owner);
     }
 
-    protected abstract bool ValidateTarget(RaycastHit hit, PlayerContext owner, PlayerContext opponent);
+    protected abstract bool ValidateTarget(RaycastHit hit, Player owner, Player opponent);
 
-    protected abstract void OnResolve(PlayerContext owner, PlayerContext opponent);
+    protected abstract void OnResolve(Player owner, Player opponent);
 }
