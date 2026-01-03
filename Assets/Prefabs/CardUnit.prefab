@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7199186985407933544
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1414074536006721621, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 1858798182870624052, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009513738263947108, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009513738263947108, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d7c4af9d1493c8543a724f304c5a45cd, type: 2}
+    - target: {fileID: 4651413752247495926, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485260824747251537, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_Name
+      value: CardUnit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7485260824747251537, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 784734339842841731}
+  m_SourcePrefab: {fileID: 100100000, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+--- !u!1 &290582661673515833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7485260824747251537, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &784734339842841731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290582661673515833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a003ad55078cdc40bc7a1f2cc2347ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardUnit
+  cardData: {fileID: 0}
+  cardColorDisctionary: {fileID: 11400000, guid: 674bf63cb693b4c4eb84785490c0f106, type: 2}
+  nameText: {fileID: 7140077837562630725}
+  manaCostText: {fileID: 3957172295386032074}
+  abilityText: {fileID: 9060453107245838851}
+  manaIcon: {fileID: 5367377930044650914}
+  cardImage: {fileID: 423391776161495927}
+  moveDuration: 0.25
+  cardVisual: {fileID: 3413678721680307831}
+  currentAttack: 0
+  currentHealth: 0
+  attackText: {fileID: 516437133944075943}
+  healthText: {fileID: 6279749300815101245}
+--- !u!114 &423391776161495927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7352292385091983135, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &516437133944075943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7260478514788588239, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &3413678721680307831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5528015566193465887, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6669a3619c6d1734b85f5d661f855cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardVisual
+--- !u!114 &3957172295386032074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6125481906807671714, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &5367377930044650914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2996133596371081674, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &6279749300815101245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3805120418248757589, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &7140077837562630725 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 71495319205297709, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &9060453107245838851 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2185816417304190571, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI

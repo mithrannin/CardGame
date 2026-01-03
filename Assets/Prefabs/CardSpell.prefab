@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3813815862434806678
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2157584775087589975, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716171064758129382, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485260824747251537, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_Name
+      value: CardSpell
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7485260824747251537, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3654903651070555436}
+  m_SourcePrefab: {fileID: 100100000, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+--- !u!114 &936980043302089388 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4174193848937580858, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 3813815862434806678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &2123731944941478492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2996133596371081674, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 3813815862434806678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &3078475470930388477 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2185816417304190571, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 3813815862434806678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &3752454855193036219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 71495319205297709, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 3813815862434806678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &5984607008150006983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7485260824747251537, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 3813815862434806678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3654903651070555436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984607008150006983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e467595a6d9754c91e7d233f3e4cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardSpellBase
+  cardData: {fileID: 0}
+  cardColorDisctionary: {fileID: 11400000, guid: 674bf63cb693b4c4eb84785490c0f106, type: 2}
+  nameText: {fileID: 3752454855193036219}
+  manaCostText: {fileID: 7056982308065620020}
+  abilityText: {fileID: 3078475470930388477}
+  manaIcon: {fileID: 2123731944941478492}
+  cardImage: {fileID: 936980043302089388}
+  cardVisual: {fileID: 8672263327074197897}
+  moveDuration: 0.25
+  resolveDelay: 0.5
+  resolvePointTransform: {fileID: 0}
+--- !u!114 &7056982308065620020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6125481906807671714, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 3813815862434806678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &8672263327074197897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5528015566193465887, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 3813815862434806678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6669a3619c6d1734b85f5d661f855cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardVisual
