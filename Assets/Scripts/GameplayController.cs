@@ -44,6 +44,8 @@ public class GameplayController : MonoBehaviour
 
     private void Start()
     {
+        AiController.Initialize(Opponent, Player, turnSystem);
+
         StartGame();
 
         playerUI.Bind(Player);
@@ -51,7 +53,7 @@ public class GameplayController : MonoBehaviour
         playerActionUI.Bind(turnSystem);
         turnUI.Bind(turnSystem);
 
-        AiController.Initialize(Opponent, Player, turnSystem);
+
     }
 
     #region Card Dragging (called by Card)
