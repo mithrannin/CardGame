@@ -123,6 +123,7 @@ public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             if (OwnerSide != PlayerSide.Human)
                 return;
 
+            transform.SetAsLastSibling();
             cardVisual.SetHovered(true);
             return;
         }
