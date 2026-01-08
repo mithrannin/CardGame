@@ -1,0 +1,20 @@
+{
+    "asset": "520422ec7c1521449ad48548e7f8ba5d",
+    "fileName": "019b9f86-b114-7ada-bdeb-870a242d5368.png",
+    "prompt": "Elven lord commander, armor and helmet, minimal backround, character focus",
+    "negativePrompt": "",
+    "model": "5b5b2af1-6ea4-4266-b087-cc9f3bf4f450",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "b7f098a33ac4a168b29eb513fd743070",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

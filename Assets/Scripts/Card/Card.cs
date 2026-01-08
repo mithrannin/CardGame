@@ -60,6 +60,7 @@ public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         abilityText.text = cardData.abilityDescription;
         manaIcon.sprite = cardColorDisctionary.GetIcon(cardData.manaColor);
         cardBackground.color = cardColorDisctionary.GetBackgroundColor(cardData.manaColor);
+        cardImage.sprite = cardData.cardArt;
 
         CurrentManaCost = cardData.manaCost;
 

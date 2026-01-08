@@ -126,6 +126,7 @@ MonoBehaviour:
   Health: 0
   attackText: {fileID: 516437133944075943}
   healthText: {fileID: 6279749300815101245}
+  tagText: {fileID: 8192336055358873557}
   animator: {fileID: 4576134040817033592}
 --- !u!114 &423391776161495927 stripped
 MonoBehaviour:
@@ -207,6 +208,17 @@ MonoBehaviour:
 --- !u!114 &7140077837562630725 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 71495319205297709, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &8192336055358873557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1322264262551319485, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
   m_PrefabInstance: {fileID: 7199186985407933544}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

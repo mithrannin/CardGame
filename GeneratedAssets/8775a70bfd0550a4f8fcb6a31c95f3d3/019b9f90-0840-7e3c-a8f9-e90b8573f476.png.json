@@ -1,0 +1,20 @@
+{
+    "asset": "42aeb70e6d1b67e45ab36d101283c84d",
+    "fileName": "019b9f90-0840-7e3c-a8f9-e90b8573f476.png",
+    "prompt": "Eagle, large, minimal background, darker background, character focus",
+    "negativePrompt": "",
+    "model": "5b5b2af1-6ea4-4266-b087-cc9f3bf4f450",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "a6f6a4fd5dae878c36ccecf9096afe89",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

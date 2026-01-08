@@ -6,6 +6,7 @@ public class CardUnit : Card
 {
     public int Attack;
     public int Health;
+
     public CardSlot CurrentSlot { get; private set; }
 
     private bool summoningSick = true;
@@ -14,6 +15,7 @@ public class CardUnit : Card
     [Header("Unit-specific")]
     [SerializeField] private TMP_Text attackText;
     [SerializeField] private TMP_Text healthText;
+    [SerializeField] private TMP_Text tagText;
     public Animator animator;
 
     protected override void OnInitializeCard(CardSO data)
@@ -29,8 +31,10 @@ public class CardUnit : Card
         Attack = unitData.attack;
         Health = unitData.health;
 
+
         attackText.text = Attack.ToString();
         healthText.text = Health.ToString();
+        tagText.text = unitData.tag.ToString();
     }
 
     public void MarkTurnPassed()

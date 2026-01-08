@@ -1,0 +1,20 @@
+{
+    "asset": "42aeb70e6d1b67e45ab36d101283c84d",
+    "fileName": "019b9f8d-ed40-775f-8135-4155755cdad7.png",
+    "prompt": "Elven beastmaster, followed by a wolf, light armor, minimal background, darker background, character focus",
+    "negativePrompt": "",
+    "model": "5b5b2af1-6ea4-4266-b087-cc9f3bf4f450",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "a7895d0b47dc94da85c0f49832ffe550",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

@@ -5410,18 +5410,18 @@ MonoBehaviour:
   mana: {fileID: 788315441}
   deck:
     cards:
-    - {fileID: 11400000, guid: 27ab7356e2e60f049b02f83abd4d35bc, type: 2}
-    - {fileID: 11400000, guid: fe68a36bc6c23f24fa615f30f3449168, type: 2}
-    - {fileID: 11400000, guid: 2e37f36d3db1e5c439114d3654cb8bc0, type: 2}
-    - {fileID: 11400000, guid: 27ab7356e2e60f049b02f83abd4d35bc, type: 2}
-    - {fileID: 11400000, guid: fe68a36bc6c23f24fa615f30f3449168, type: 2}
-    - {fileID: 11400000, guid: 2e37f36d3db1e5c439114d3654cb8bc0, type: 2}
-    - {fileID: 11400000, guid: 27ab7356e2e60f049b02f83abd4d35bc, type: 2}
-    - {fileID: 11400000, guid: fe68a36bc6c23f24fa615f30f3449168, type: 2}
-    - {fileID: 11400000, guid: 2e37f36d3db1e5c439114d3654cb8bc0, type: 2}
-    - {fileID: 11400000, guid: 27ab7356e2e60f049b02f83abd4d35bc, type: 2}
-    - {fileID: 11400000, guid: fe68a36bc6c23f24fa615f30f3449168, type: 2}
-    - {fileID: 11400000, guid: 2e37f36d3db1e5c439114d3654cb8bc0, type: 2}
+    - {fileID: 11400000, guid: 8128d9eb964dc9749939d3fe3c9f777f, type: 2}
+    - {fileID: 11400000, guid: b5ca23eeef78f7d4f8c10bfd06d61464, type: 2}
+    - {fileID: 11400000, guid: 228f4cfa8bdd1b843aebd5159e938012, type: 2}
+    - {fileID: 11400000, guid: 7b03020c59e284c4dbbd94dcc5f7731f, type: 2}
+    - {fileID: 11400000, guid: 4884a4ab9db7c5d44b22f4c71cd046ad, type: 2}
+    - {fileID: 11400000, guid: 12956ed12fb294b4ea8cb89088211ea3, type: 2}
+    - {fileID: 11400000, guid: c83aaaca98ac9e44b83773721c38fbca, type: 2}
+    - {fileID: 11400000, guid: d4b21fd2423eb6743b20ffdaeb500ce5, type: 2}
+    - {fileID: 11400000, guid: 1e837dba03e2cbc409717d21a40bfc2b, type: 2}
+    - {fileID: 11400000, guid: d50e84a26f1ed5a43ba0019da23a7eb4, type: 2}
+    - {fileID: 11400000, guid: 35409095a007b2a45b30c1ac00e5175c, type: 2}
+    - {fileID: 11400000, guid: 35409095a007b2a45b30c1ac00e5175c, type: 2}
   playerName: Player
 --- !u!1 &1478485349
 GameObject:

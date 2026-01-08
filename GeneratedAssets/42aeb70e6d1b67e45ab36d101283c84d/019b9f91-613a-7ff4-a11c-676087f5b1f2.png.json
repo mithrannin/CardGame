@@ -1,0 +1,20 @@
+{
+    "asset": "42aeb70e6d1b67e45ab36d101283c84d",
+    "fileName": "019b9f91-613a-7ff4-a11c-676087f5b1f2.png",
+    "prompt": "Forest sanctuary, pond, clearing, darker background, calm",
+    "negativePrompt": "",
+    "model": "5b5b2af1-6ea4-4266-b087-cc9f3bf4f450",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "898df7e64f4ac745d1f37e255551f22a",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

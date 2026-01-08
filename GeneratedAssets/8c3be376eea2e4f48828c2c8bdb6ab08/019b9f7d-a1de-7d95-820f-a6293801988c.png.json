@@ -1,0 +1,20 @@
+{
+    "asset": "8c3be376eea2e4f48828c2c8bdb6ab08",
+    "fileName": "019b9f7d-a1de-7d95-820f-a6293801988c.png",
+    "prompt": "Elven archer, focus on character, minimal backround",
+    "negativePrompt": "",
+    "model": "5b5b2af1-6ea4-4266-b087-cc9f3bf4f450",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "87509ae100756fa71f5da9e3dd1e2f11",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}
