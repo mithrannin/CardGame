@@ -18,6 +18,7 @@ public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] protected TMP_Text abilityText;
     [SerializeField] protected Image manaIcon;
     [SerializeField] protected Image cardImage;
+    [SerializeField] protected Image cardBackground;
     [SerializeField] private CardVisual cardVisual;
 
     [Header("Runtime State")]
@@ -58,6 +59,7 @@ public abstract class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         manaCostText.text = cardData.manaCost.ToString();
         abilityText.text = cardData.abilityDescription;
         manaIcon.sprite = cardColorDisctionary.GetIcon(cardData.manaColor);
+        cardBackground.color = cardColorDisctionary.GetBackgroundColor(cardData.manaColor);
 
         CurrentManaCost = cardData.manaCost;
 

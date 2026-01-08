@@ -119,6 +119,7 @@ MonoBehaviour:
   abilityText: {fileID: 9060453107245838851}
   manaIcon: {fileID: 5367377930044650914}
   cardImage: {fileID: 423391776161495927}
+  cardBackground: {fileID: 4806042511312928894}
   cardVisual: {fileID: 3413678721680307831}
   moveDuration: 0.25
   Attack: 0
@@ -170,6 +171,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &4806042511312928894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2403471227095165974, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 7199186985407933544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!114 &5367377930044650914 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2996133596371081674, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}

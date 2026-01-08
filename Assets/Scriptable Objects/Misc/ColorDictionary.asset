@@ -15,11 +15,16 @@ MonoBehaviour:
   manaColors:
   - color: 0
     icon: {fileID: 2106863685, guid: 00f22c956a9710a4ba704f0fbb238f4d, type: 3}
+    backgroundColor: {r: 0.8018868, g: 0.77238345, b: 0.6543699, a: 1}
   - color: 1
     icon: {fileID: 2004705673, guid: 00f22c956a9710a4ba704f0fbb238f4d, type: 3}
+    backgroundColor: {r: 0.27042544, g: 0.38153, b: 0.5566038, a: 1}
   - color: 2
     icon: {fileID: -1129046101, guid: 00f22c956a9710a4ba704f0fbb238f4d, type: 3}
+    backgroundColor: {r: 0.3137255, g: 0.27450982, b: 0.3529412, a: 1}
   - color: 3
     icon: {fileID: -1434954654, guid: 00f22c956a9710a4ba704f0fbb238f4d, type: 3}
+    backgroundColor: {r: 0.6320754, g: 0.25342646, b: 0.25342646, a: 1}
   - color: 4
     icon: {fileID: 1762030807, guid: 00f22c956a9710a4ba704f0fbb238f4d, type: 3}
+    backgroundColor: {r: 0.2212531, g: 0.41509432, b: 0.26002136, a: 1}

@@ -10,6 +10,7 @@ public class CardColorDisctionarySO : ScriptableObject
     {
         public CardSO.ManaColor color;
         public Sprite icon;
+        public Color backgroundColor;
     }
 
     public Sprite GetIcon(CardSO.ManaColor color)
@@ -22,5 +23,17 @@ public class CardColorDisctionarySO : ScriptableObject
             }
         }
         return null;
+    }
+
+    public Color GetBackgroundColor(CardSO.ManaColor color)
+    {
+        foreach(var manaColor in manaColors)
+        {
+            if (manaColor.color == color)
+            {
+                return manaColor.backgroundColor;
+            }
+        }
+        return Color.brown;
     }
 }

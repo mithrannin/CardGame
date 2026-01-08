@@ -167,6 +167,8 @@ public class GameplayController : MonoBehaviour
             turnSystem.StartGame(Player, Opponent);
         else
             turnSystem.StartGame(Opponent, Player);
+
+        RefreshHandPlayableState();
     }
 
     private void InitializePlayer(PlayerView view)
@@ -183,14 +185,6 @@ public class GameplayController : MonoBehaviour
         player.OnLifeChanged += CheckWinCondition;
 
         DrawFullDeck(view);
-
-        StartCoroutine(DelayedHandRefresh());
-    }
-
-    private IEnumerator DelayedHandRefresh()
-    {
-        yield return null;
-        RefreshHandPlayableState();
     }
 
     private void DrawFullDeck(PlayerView view)

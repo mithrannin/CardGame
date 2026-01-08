@@ -56,12 +56,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6280749536071348603, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 560.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6280749536071348603, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -621.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7485260824747251537, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
       propertyPath: m_Name
       value: CardSpell
       objectReference: {fileID: 0}
+    - target: {fileID: 9139128819294591526, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 569.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139128819294591526, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139128819294591526, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -636.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5731781228262187828, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+    - {fileID: 4739512769736281326, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7485260824747251537, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
@@ -71,6 +93,17 @@ PrefabInstance:
 --- !u!114 &936980043302089388 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4174193848937580858, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+  m_PrefabInstance: {fileID: 3813815862434806678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1564927249567455104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2403471227095165974, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
   m_PrefabInstance: {fileID: 3813815862434806678}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -136,10 +169,10 @@ MonoBehaviour:
   abilityText: {fileID: 3078475470930388477}
   manaIcon: {fileID: 2123731944941478492}
   cardImage: {fileID: 936980043302089388}
+  cardBackground: {fileID: 1564927249567455104}
   cardVisual: {fileID: 8672263327074197897}
   moveDuration: 0.25
   resolveDelay: 0.5
-  resolvePointTransform: {fileID: 0}
 --- !u!114 &7056982308065620020 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6125481906807671714, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
