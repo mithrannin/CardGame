@@ -15,6 +15,7 @@ public class TurnSystemManager : MonoBehaviour
     public int ActionsRemaining { get; private set; }
 
     [SerializeField] private CombatManager combatManager;
+    [SerializeField] private AbilityManager abilityManager;
 
     private int baseActions = 1;
     private int turnNumber = 1;
@@ -38,6 +39,8 @@ public class TurnSystemManager : MonoBehaviour
             ActionsRemaining++;
         
         Phase = TurnPhase.Action;
+
+        abilityManager.TriggerGlobalAbilities(AbilityTrigger.OnTurnStart, ActivePlayer, InactivePlayer);
         ActivePlayer.OnTurnStart();
 
         if (ActivePlayer.Side == PlayerSide.AI)
@@ -69,6 +72,8 @@ public class TurnSystemManager : MonoBehaviour
     private void EndTurn()
     {
         Phase = TurnPhase.End;
+
+        abilityManager.TriggerGlobalAbilities(AbilityTrigger.OnTurnEnd, ActivePlayer, InactivePlayer);
         ActivePlayer.OnTurnEnd();
 
         (ActivePlayer, InactivePlayer) = (InactivePlayer, ActivePlayer);

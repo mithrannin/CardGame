@@ -34,7 +34,8 @@ public class CardUnit : Card
 
         attackText.text = Attack.ToString();
         healthText.text = Health.ToString();
-        tagText.text = unitData.tag.ToString();
+
+        tagText.text = unitData.GetTagsDisplayText();
     }
 
     public void MarkTurnPassed()
@@ -50,6 +51,18 @@ public class CardUnit : Card
         {
             Die();
         }
+        healthText.text = Health.ToString();
+    }
+
+    public void Heal(int amount)
+    {
+        if (cardData is not CardUnitSO unitData)
+            return;
+
+        int maxHealth = unitData.health;
+        Health = Mathf.Min(Health + amount, maxHealth);
+        healthText.text = Health.ToString();
+        
     }
 
     public event Action<CardUnit> OnDeath;

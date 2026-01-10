@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
+    [SerializeField] private AbilityManager abilityManager;
+
     public void ResolveCombat(Player attacker, Player defender)
     {
         StartCoroutine(ResolveCombatCoroutine(attacker, defender));
@@ -10,17 +12,29 @@ public class CombatManager : MonoBehaviour
 
     private void ResolveAttack(CardUnit attacker, Player defender)
     {
-        CardSlot opposingSlot = defender.Field.GetOpposingSlot(attacker.CurrentSlot);
+        Player attackerOwner = attacker.Owner.Player;
+
+        CardUnit customTarget = abilityManager.GetCustomTarget(attacker, attackerOwner, defender);
         attacker.animator.SetTrigger("Attack");
 
-        if (opposingSlot != null && opposingSlot.CardInSlot is CardUnit defenderUnit)
+        if (customTarget != null)
         {
-            ResolveUnitVsUnit(attacker, defenderUnit);
+            ResolveUnitVsUnit(attacker, customTarget);
         }
         else
         {
-            ResolveDirectAttack(attacker, defender);
+            CardSlot opposingSlot = defender.Field.GetOpposingSlot(attacker.CurrentSlot);
+            if (opposingSlot != null && opposingSlot.CardInSlot is CardUnit defenderUnit)
+            {
+                ResolveUnitVsUnit(attacker, defenderUnit);
+            }
+            else
+            {
+                ResolveDirectAttack(attacker, defender);
+            }
         }
+
+        abilityManager.TriggerAbilities(AbilityTrigger.OnAttack, attacker, attackerOwner, defender);
     }
 
     private IEnumerator ResolveCombatCoroutine(Player attacker, Player defender)

@@ -21,6 +21,7 @@ public class GameplayController : MonoBehaviour
     [Header("Systems")]
     [SerializeField] private TurnSystemManager turnSystem;
     [SerializeField] private CardPlayResolver cardPlayResolver;
+    [SerializeField] private AbilityManager abilityManager;
     
     public AIController AiController;
 
@@ -252,10 +253,15 @@ public class GameplayController : MonoBehaviour
     public void OnUnitPlayed(CardUnit unit)
     {
         RegisterUnit(unit);
+
+        Player owner = unit.Owner.Player;
+        Player opponent = owner == Player ? Opponent : Player;
+        abilityManager.RegisterUnit(unit, owner, opponent);
     }
 
     public void OnUnitRemovedFromField(CardUnit unit)
     {
+        abilityManager.UnregisterUnit(unit);
         UnregisterUnit(unit);
     }
 
