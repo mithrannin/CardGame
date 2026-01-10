@@ -19,4 +19,6 @@ MonoBehaviour:
   abilityDescription: 
   attack: 4
   health: 12
-  tag: 0
+  tags:
+  - {fileID: 11400000, guid: a12675f9dd2c652448b44d5e06963f62, type: 2}
+  abilities: []

@@ -16,6 +16,7 @@ public class OnSummonBuff : AbilitySO
         {
             context.Source.Attack += attackPerUnit * count;
             context.Source.Health += healthPerUnit * count;
+            context.Source.UpdateStats();
 
             Debug.Log($"{context.Source.CardData.cardName} gained +{attackPerUnit * count}/+{healthPerUnit * count}");
         }

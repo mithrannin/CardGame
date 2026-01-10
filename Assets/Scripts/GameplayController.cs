@@ -146,13 +146,11 @@ public class GameplayController : MonoBehaviour
 
     private void RefreshHandPlayableState()
     {
-        if (ActivePlayer == null || ActivePlayer.Hand == null)
+        if (Player == null || Player.Hand == null)
             return;
 
-        Player active = ActivePlayer;
-
-        foreach (Card card in active.Hand.Cards)
-            card.SetPlayable(active.Mana.CanPayCost(card));
+        foreach (Card card in Player.Hand.Cards)
+            card.SetPlayable(Player.Mana.CanPayCost(card));
     }
 
     #endregion

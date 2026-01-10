@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3d591835e8d464caa1d905ac3690ce, type: 3}
   m_Name: Wolf King
   m_EditorClassIdentifier: Assembly-CSharp::CardUnitSO
-  cardName: Wolf
+  cardName: Wolf King
   manaCost: 6
-  cardArt: {fileID: 21300000, guid: 42aeb70e6d1b67e45ab36d101283c84d, type: 3}
+  cardArt: {fileID: 21300000, guid: 72cefbdea54cfb8458c60dd014d2a2a6, type: 3}
   manaColor: 4
   abilityDescription: 'At the end of turn, summon a Wolf into a random slot. '
   attack: 9
   health: 13
-  tag: 1
+  tags:
+  - {fileID: 11400000, guid: 302a843991a394b4caa99a43e4c6391d, type: 2}
+  abilities: []

@@ -34,7 +34,8 @@ public class AbilityManager : MonoBehaviour
 
         if (instances.Count > 0)
         {
-            // trigger abilities
+            unitAbilities[unit] = instances;
+            TriggerAbilities(AbilityTrigger.OnSummon, unit, owner, opponent);
         }
     }
 

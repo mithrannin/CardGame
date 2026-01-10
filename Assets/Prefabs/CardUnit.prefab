@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 665077311691964825, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 184.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 665077311691964825, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 562.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 910121684238334768, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 910121684238334768, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 374
+      objectReference: {fileID: 0}
     - target: {fileID: 1414074536006721621, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -24,6 +40,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: d7c4af9d1493c8543a724f304c5a45cd, type: 2}
+    - target: {fileID: 3805120418248757589, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_text
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805120418248757589, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_fontSize
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805120418248757589, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805120418248757589, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_TextWrappingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4651413752247495926, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -66,6 +98,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5405830258750766527, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260478514788588239, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_text
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260478514788588239, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_fontSize
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260478514788588239, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260478514788588239, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
+      propertyPath: m_TextWrappingMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7485260824747251537, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}
@@ -128,6 +176,9 @@ MonoBehaviour:
   healthText: {fileID: 6279749300815101245}
   tagText: {fileID: 8192336055358873557}
   animator: {fileID: 4576134040817033592}
+  buffedColor: {r: 0, g: 1, b: 0, a: 1}
+  debuffedColor: {r: 1, g: 0, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &423391776161495927 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7352292385091983135, guid: 0f1b2f1e3a486cb4280d5c18744c6654, type: 3}

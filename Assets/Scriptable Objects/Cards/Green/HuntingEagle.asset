@@ -19,4 +19,6 @@ MonoBehaviour:
   abilityDescription: When summoned, attacks the weakest enemy unit.
   attack: 8
   health: 4
-  tag: 1
+  tags:
+  - {fileID: 11400000, guid: 302a843991a394b4caa99a43e4c6391d, type: 2}
+  abilities: []

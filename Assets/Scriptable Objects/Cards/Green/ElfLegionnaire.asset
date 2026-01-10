@@ -16,7 +16,10 @@ MonoBehaviour:
   manaCost: 3
   cardArt: {fileID: 21300000, guid: 520422ec7c1521449ad48548e7f8ba5d, type: 3}
   manaColor: 4
-  abilityDescription: When summoned, gets +1/+1 for each other Elf on the field.
+  abilityDescription: This should not be here :)
   attack: 5
   health: 12
-  tag: 0
+  tags:
+  - {fileID: 11400000, guid: a12675f9dd2c652448b44d5e06963f62, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: e7c7991a86e7b2c43a2b905b3d531d29, type: 2}
